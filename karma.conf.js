@@ -18,7 +18,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'specs/**/*Spec.js': ['webpack', 'sourcemap']
+      'specs/**/*Spec.js': ['webpack', 'sourcemap'],
     },
 
     webpack: {
@@ -32,15 +32,15 @@ module.exports = function (config) {
         new Dotenv({
           path: path.resolve(__dirname, '.env'),
           systemvars: true,
-          safe: true
-        })
-      ]
+          safe: true,
+        }),
+      ],
     },
 
     webpackMiddleware: {
       // webpack-dev-middleware configuration
       // i. e.
-      stats: 'errors-only'
+      stats: 'errors-only',
     },
 
     // test results reporter to use
@@ -72,6 +72,6 @@ module.exports = function (config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
-  })
-}
+    concurrency: Infinity,
+  });
+};
