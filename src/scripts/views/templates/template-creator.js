@@ -1,4 +1,4 @@
-import CONFIG from '../../globals/config'
+import CONFIG from "../../globals/config";
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <style>
@@ -52,7 +52,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
               <ul>
                 ${restaurant.menus.foods
                   .map((food) => `<li>${food.name}</li>`)
-                  .join('')}
+                  .join("")}
               </ul>
             </td>
           </tr>
@@ -62,7 +62,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
               <ul>
                 ${restaurant.menus.drinks
                   .map((drink) => `<li>${drink.name}</li>`)
-                  .join('')}
+                  .join("")}
               </ul>
             </td>
           </tr>          
@@ -90,13 +90,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
             </div>
           `
                 )
-                .join('')
-            : '<p>No customer reviews yet.</p>'
+                .join("")
+            : "<p>No customer reviews yet.</p>"
         }
       </div>
     </div>
   </article>
-`
+`;
 
 const createRestaurantListTemplate = (
   restaurants
@@ -120,23 +120,23 @@ const createRestaurantListTemplate = (
           <p class="list-item_rate">
           ⭐${restaurants.rating}
           </p>
-      </article>`
+      </article>`;
 
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="fav">
+const createLikeRestoButtonTemplate = () => `
+  <button aria-label="like this resto" id="likeButton" class="fav">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
-`
+`;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="fav">
+const createUnlikeRestoButtonTemplate = () => `
+  <button aria-label="unlike this resto" id="likeButton" class="fav">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
-`
+`;
 
 export {
   createRestaurantListTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate
-}
+  createLikeRestoButtonTemplate,
+  createUnlikeRestoButtonTemplate,
+};

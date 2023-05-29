@@ -1,5 +1,4 @@
 // Karma configuration
-// Generated on Fri Jul 03 2020 20:15:52 GMT+0700 (Western Indonesia Time)
 module.exports = function (config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -18,7 +17,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'specs/**/*Spec.js': ['webpack', 'sourcemap'],
+      'specs/**/*Spec.js': ['webpack', 'sourcemap']
     },
 
     webpack: {
@@ -27,20 +26,13 @@ module.exports = function (config) {
       // webpack watches dependencies
       // webpack configuration
       devtool: 'inline-source-map',
-      mode: 'development',
-      plugins: [
-        new Dotenv({
-          path: path.resolve(__dirname, '.env'),
-          systemvars: true,
-          safe: true,
-        }),
-      ],
+      mode: 'development'
     },
 
     webpackMiddleware: {
       // webpack-dev-middleware configuration
       // i. e.
-      stats: 'errors-only',
+      stats: 'errors-only'
     },
 
     // test results reporter to use
@@ -64,14 +56,14 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['ChromeHeadless'],
+    browsers: ['Chrome'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity,
-  });
-};
+    concurrency: Infinity
+  })
+}
