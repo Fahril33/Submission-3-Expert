@@ -109,7 +109,9 @@ const createRestaurantListTemplate = (
         </div>
         <div class="list-item_content">
           <h2 class="list-item_name">
-            <a href="/#/detail/${restaurants.id}">${restaurants.name}</a>
+            <a class="restaurant-item_link" id="target" href="/#/detail/${
+              restaurants.id
+            }">${restaurants.name}</a>
           </h2>
           <span class="list-item_city">
           ${restaurants.city}
