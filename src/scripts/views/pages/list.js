@@ -17,7 +17,7 @@ const ListRestaurant = {
               <h1 class="about">MORE ABOUT ME</h1>
               <img
                 class="profile-img"
-                src="./images/heros/mypict.jpg"
+                src="./mypict.jpg"
                 alt="Foto Pembuat Halaman"
               />
               <div class="profile-content">
@@ -28,31 +28,31 @@ const ListRestaurant = {
                 <div class="icon">
                   <a href="http://wa.me/+6281342246239">
                     <img
-                      src="./images/heros/social/WhatsApp.png"
+                      src="./social/WhatsApp.png"
                       alt=""
                       class="contact-image"
                     />
                   </a>
                   <a href="https://www.instagram.com/muhammad_fchrl/">
                     <img
-                      src="./images/heros/social/Instagram.png"
+                      src="./social/Instagram.png"
                       alt=""
                       class="contact-image"
                     />
                   </a>
                   <a href="https://discordapp.com/users/756418399873138728">
-                    <img src="./images/heros/social/Discord.png" alt="" class="contact-image" />
+                    <img src="./social/Discord.png" alt="" class="contact-image" />
                   </a>
                   <a href="https://web.facebook.com/ClasherPensiun24">
                     <img
-                      src="./images/heros/social/Facebook.png"
+                      src="./social/Facebook.png"
                       alt=""
                       class="contact-image"
                     />
                   </a>
                   <a href="https://t.me/MuhFachril24">
                     <img
-                      src="./images/heros/social/Telegram.png"
+                      src="./social/Telegram.png"
                       alt=""
                       class="contact-image"
                     />
@@ -72,7 +72,7 @@ const ListRestaurant = {
     const restoContainer = document.querySelector('#lists')
     if (Array.isArray(restaurants) && restaurants.length > 0) {
       restaurants.forEach((restaurant) => {
-        restoContainer.innerHTML += createRestaurantListTemplate(restaurant)
+        restoContainer.innerHTML += createRestaurantListTemplate(restaurant);
       })
     } else if (restaurants === null) {
       document.querySelector('.headContent').textContent =

@@ -98,7 +98,7 @@ nav ul li a:hover {
  
 /* Jumbotron */
 .hero {
-  background-image: url("/src/public/images/heros/hero-image_2.jpg");
+  background-image: url("/src/public/images/hero-image_2.jpg");
   background-color: #3fb432;
   background-size: cover;
   background-position: center;

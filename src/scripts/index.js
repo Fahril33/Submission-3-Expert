@@ -3,6 +3,8 @@ import '../styles/style.css'
 import '../styles/responsive.css'
 import App from './views/app'
 import swRegister from './utils/sw-register'
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 const app = new App({
   button: document.querySelector('#burger'),
@@ -28,3 +30,14 @@ window.addEventListener('load', () => {
   app.renderPage()
   swRegister()
 })
+
+// Modal ukuran layar
+var modal = document.getElementById("myModal");
+var closeBtn = document.getElementsByClassName("close")[0];
+
+function hideModal() {
+  modal.style.display = "none";
+}
+
+closeBtn.addEventListener("click", hideModal);
+window.addEventListener("load", showModal);

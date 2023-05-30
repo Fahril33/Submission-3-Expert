@@ -1,4 +1,4 @@
-import CONFIG from '../../globals/config'
+import CONFIG from "../../globals/config";
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <style>
@@ -14,7 +14,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
     <div class="detail-item">
       <div class="container_img">
-        <img class="detail_img" src="
+        <img class="detail_img lazyload" src="
         ${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" 
         alt="${restaurant.name}" crossorigin="anonymous"/>
       </div>
@@ -52,7 +52,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
               <ul>
                 ${restaurant.menus.foods
                   .map((food) => `<li>${food.name}</li>`)
-                  .join('')}
+                  .join("")}
               </ul>
             </td>
           </tr>
@@ -62,7 +62,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
               <ul>
                 ${restaurant.menus.drinks
                   .map((drink) => `<li>${drink.name}</li>`)
-                  .join('')}
+                  .join("")}
               </ul>
             </td>
           </tr>          
@@ -90,26 +90,28 @@ const createRestaurantDetailTemplate = (restaurant) => `
             </div>
           `
                 )
-                .join('')
-            : '<p>No customer reviews yet.</p>'
+                .join("")
+            : "<p>No customer reviews yet.</p>"
         }
       </div>
     </div>
   </article>
-`
+`;
 
 const createRestaurantListTemplate = (
   restaurants
 ) => `<article class="list-item" data-title">
         <img
-          class="list-item_img"
+          class="list-item_img lazyload"
           src="${CONFIG.BASE_IMAGE_URL + restaurants.pictureId}"
           alt="Foto resto ${restaurants.name}" crossorigin="anonymous"
         />
         </div>
         <div class="list-item_content">
           <h2 class="list-item_name">
-            <a href="/#/detail/${restaurants.id}">${restaurants.name}</a>
+            <a class="restaurant-item_link" id="target" href="/#/detail/${
+              restaurants.id
+            }">${restaurants.name}</a>
           </h2>
           <span class="list-item_city">
           ${restaurants.city}
@@ -120,23 +122,23 @@ const createRestaurantListTemplate = (
           <p class="list-item_rate">
           ⭐${restaurants.rating}
           </p>
-      </article>`
+      </article>`;
 
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="fav">
+const createLikeRestoButtonTemplate = () => `
+  <button aria-label="like this resto" id="likeButton" class="fav">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
-`
+`;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="fav">
+const createUnlikeRestoButtonTemplate = () => `
+  <button aria-label="unlike this resto" id="likeButton" class="fav">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
-`
+`;
 
 export {
   createRestaurantListTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate
-}
+  createLikeRestoButtonTemplate,
+  createUnlikeRestoButtonTemplate,
+};
