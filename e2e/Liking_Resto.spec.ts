@@ -1,4 +1,3 @@
-
 const assert = require("assert");
 
 Feature("Favorite Restaurant");
@@ -18,12 +17,14 @@ Scenario("liking one restaurant", async ({ I }) => {
   I.see(emptyFavoriteResto, ".lists");
 
   I.amOnPage("/");
+  I.waitForElement(".list-item");
 
   I.seeElement(".list-item_content h2 a");
   const firstRestoCard = locate(".restaurant-item_link").first();
   const firstRestoCardTitle = await I.grabTextFrom(firstRestoCard);
   I.click(firstRestoCard);
 
+  I.waitForElement("#likeButton");
   I.seeElement("#likeButton");
   I.click("#likeButton");
 
@@ -36,6 +37,7 @@ Scenario("liking one restaurant", async ({ I }) => {
 
 Scenario("unliking one restaurant", async ({ I }) => {
   I.amOnPage("/");
+  I.waitForElement(".list-item");
   I.seeElement(".list-item_content h2 a");
   const firstRestoCard = locate(".restaurant-item_link").first();
   I.click(firstRestoCard);
@@ -44,15 +46,13 @@ Scenario("unliking one restaurant", async ({ I }) => {
   I.click("#likeButton");
 
   I.amOnPage("/#/fav");
-  I.seeElement(".card");
+  I.seeElement(".list-item_name");
   const likedCardTitle = await I.grabTextFrom(".restaurant-item_link");
   I.click(likedCardTitle);
 
-  // URL: /resto/:id
   I.seeElement("#likeButton");
   I.click("#likeButton");
 
-  // URL: /#/favorite
   I.amOnPage("/#/fav");
   I.seeElement("#lists");
   I.dontSeeElement(".list-item");
