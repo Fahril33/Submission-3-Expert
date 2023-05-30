@@ -14,7 +14,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
     <div class="detail-item">
       <div class="container_img">
-        <img class="detail_img" src="
+        <img class="detail_img lazyload" src="
         ${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" 
         alt="${restaurant.name}" crossorigin="anonymous"/>
       </div>
@@ -102,7 +102,7 @@ const createRestaurantListTemplate = (
   restaurants
 ) => `<article class="list-item" data-title">
         <img
-          class="list-item_img"
+          class="list-item_img lazyload"
           src="${CONFIG.BASE_IMAGE_URL + restaurants.pictureId}"
           alt="Foto resto ${restaurants.name}" crossorigin="anonymous"
         />
