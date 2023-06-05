@@ -98,7 +98,7 @@ nav ul li a:hover {
  
 /* Jumbotron */
 .hero {
-  background-image: url("/src/public/images/hero-image_2.jpg");
+  background-image: url("/images/hero-image_2-large.jpg");
   background-color: #3fb432;
   background-size: cover;
   background-position: center;
@@ -394,12 +394,6 @@ footer p {
  hr{
   color: #3fb432;
  }
-
- .detail-item{
- }
-
-.container-img {
-}
 
  .detail_img {
   border-radius: 10px;
