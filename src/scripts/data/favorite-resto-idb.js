@@ -12,26 +12,25 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 })
 
 const FavoriteRestoIdb = {
-  async getResto(id) {
+  async getResto (id) {
     if (!id) {
-      return;
+      return
     }
-    return (await dbPromise).get(OBJECT_STORE_NAME, id);
+    return (await dbPromise).get(OBJECT_STORE_NAME, id)
   },
-  
-  async getAllResto() {
-    return (await dbPromise).getAll(OBJECT_STORE_NAME);
+
+  async getAllResto () {
+    return (await dbPromise).getAll(OBJECT_STORE_NAME)
   },
-  async putResto(restaurant) {
-    if (!restaurant.hasOwnProperty("id")) {
-      return;
+  async putResto (restaurant) {
+    if (!Object.prototype.hasOwnProperty.call(restaurant, 'id')) {
+      return
     }
-    // eslint-disable-next-line consistent-return
-    return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
+    return (await dbPromise).put(OBJECT_STORE_NAME, restaurant)
   },
-  async deleteResto(id) {
-    return (await dbPromise).delete(OBJECT_STORE_NAME, id);
-  },
-};
+  async deleteResto (id) {
+    return (await dbPromise).delete(OBJECT_STORE_NAME, id)
+  }
+}
 
 export default FavoriteRestoIdb

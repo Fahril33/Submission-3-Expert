@@ -59,6 +59,10 @@
   .profile-img {
     width: 150px;
   }
+
+  .hero {
+    background: url('/images/hero-image_2-small.jpg');
+  }
 }
 
 @media screen and (min-width: 455px) {
@@ -83,7 +87,14 @@
   .header__menu {
     display: none;
   }
+  .hero {
+    background: url('/images/hero-image_2-large.jpg');
+  }
 }
+
+/* @media screen and (max-width: 600px) {
+
+} */
 
 @media screen and (min-width: 650px) {
   .headline__content {

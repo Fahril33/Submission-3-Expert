@@ -72,7 +72,7 @@ const ListRestaurant = {
     const restoContainer = document.querySelector('#lists')
     if (Array.isArray(restaurants) && restaurants.length > 0) {
       restaurants.forEach((restaurant) => {
-        restoContainer.innerHTML += createRestaurantListTemplate(restaurant);
+        restoContainer.innerHTML += createRestaurantListTemplate(restaurant)
       })
     } else if (restaurants === null) {
       document.querySelector('.headContent').textContent =

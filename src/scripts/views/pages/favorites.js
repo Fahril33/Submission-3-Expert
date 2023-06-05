@@ -1,8 +1,8 @@
-import FavoriteRestoIdb from "../../data/favorite-resto-idb";
-import { createRestaurantListTemplate } from "../templates/template-creator";
+import FavoriteRestoIdb from '../../data/favorite-resto-idb'
+import { createRestaurantListTemplate } from '../templates/template-creator'
 
 const Fav = {
-  async render() {
+  async render () {
     return `
     
     <div class="container">
@@ -11,25 +11,25 @@ const Fav = {
         <!-- Isi Konten -->
         </div>
     </div>
-  `;
+  `
   },
 
-  async afterRender() {
-    const restaurant = await FavoriteRestoIdb.getAllResto();
-    const favContainer = document.querySelector("#lists");
+  async afterRender () {
+    const restaurant = await FavoriteRestoIdb.getAllResto()
+    const favContainer = document.querySelector('#lists')
 
     if (restaurant.length === 0) {
       // document.querySelector('.headContent').textContent =
       //   'Ups! Resto Favorite Kamu Kosong'
-      favContainer.innerHTML = 'Ups! Resto Favorite Kamu Kosong';      
+      favContainer.innerHTML = 'Ups! Resto Favorite Kamu Kosong'
     } else {
       restaurant.forEach((restaurant) => {
-        favContainer.innerHTML += createRestaurantListTemplate(restaurant);
-      });
+        favContainer.innerHTML += createRestaurantListTemplate(restaurant)
+      })
     }
 
-    console.log(restaurant);
-  },
-};
+    console.log(restaurant)
+  }
+}
 
-export default Fav;
+export default Fav
